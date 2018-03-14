@@ -1,37 +1,27 @@
 `timescale 1ns / 1ps
 
-module counter_modulo # (
+module led_button # (
     parameter MODULO = 7,
     parameter WIDTH = $clog2(MODULO)
 ) (
+    input clk,
+    input ce,
+    input rst,
+    output [WIDTH-1:0] out
 );
-
-reg clk = 1'b0;
-reg ce = 1'b1;
-reg rst = 1'b0;
-wire [WIDTH-1:0] out;
-reg [WIDTH-1:0] cnt = WIDTH-1'b0;
-
-initial
-begin
-    while(1)
+    reg [WIDTH-1:0] val = 0;
+    always @(posedge clk)
     begin
-        #1; clk = 1'b0;
-        #1; clk = 1'b1;
+        if(rst) 
+            val <= 0;
+        else
+            if(ce)
+                if(val == MODULO-1) 
+                    val <= 0;
+                else 
+                    val <= val + 1;
+            else 
+                val <= val;
     end
-end
-
-always @(posedge clk)
-begin
-    cnt <= cnt + 1;
-end
-
-cnt_mod_N # (
-    .MODULO(MODULO)
-) dut (
-    .clk(clk),
-    .ce(ce),
-    .rst(rst),
-    .out(out)
-);
+    assign out = val;
 endmodule
