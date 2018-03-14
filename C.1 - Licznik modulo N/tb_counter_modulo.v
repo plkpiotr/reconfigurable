@@ -1,27 +1,41 @@
 `timescale 1ns / 1ps
 
-module led_button # (
+module tb_led_button # (
     parameter MODULO = 7,
     parameter WIDTH = $clog2(MODULO)
 ) (
-    input clk,
-    input ce,
-    input rst,
-    output [WIDTH-1:0] out
 );
-    reg [WIDTH-1:0] val = 0;
-    always @(posedge clk)
+
+reg clk = 1'b0;
+reg ce = 1'b1;
+reg rst = 1'b0;
+wire [WIDTH-1:0] out;
+reg [29:0] cnt = 29'b0;
+
+initial
+begin
+    while(1)
     begin
-        if(rst) 
-            val <= 0;
-        else
-            if(ce)
-                if(val == MODULO-1) 
-                    val <= 0;
-                else 
-                    val <= val + 1;
-            else 
-                val <= val;
+        #10; clk = 1'b0;
+        #10; clk = 1'b1;
     end
-    assign out = val;
+end
+
+always @(posedge clk)
+begin
+    cnt <= cnt + 1;
+    if (cnt == 20)
+        rst <= 1'b1;
+    else if (cnt == 30)
+        rst <= 1'b0;
+end
+
+led_button # (
+    .MODULO(MODULO)
+) dut (
+    .clk(clk),
+    .ce(ce),
+    .rst(rst),
+    .out(out)
+);
 endmodule
