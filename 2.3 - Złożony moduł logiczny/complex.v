@@ -15,17 +15,11 @@ module complex (
 		begin
 			assign levelFirst[i] = x [i] && y[i];
 			if (i % 2 == 1)
-			begin
 				assign levelScond[(i-1)/2] = levelFirst[i-1] || levelFirst[i];
-			end
 			if (i % 4 == 3)
-			begin
 				assign levelThird[(i-3)/4] = levelScond[(i-3)/2] && levelScond[(i-1)/2];
-			end
 			if (i % 8 == 7)
-			begin 
 				assign levelFourth = levelThird[i-7] || levelThird[i-6];
-			end
 		end
 		assign z = levelFourth;
 	endgenerate
