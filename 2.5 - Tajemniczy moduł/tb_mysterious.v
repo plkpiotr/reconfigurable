@@ -24,7 +24,7 @@ module stimulate (
     assign x = inc_x;
     assign a = inc_a;
 
-endmodule
+endmodule //stimulate
 
 module tb_mysterious ();
 
@@ -43,4 +43,4 @@ module tb_mysterious ();
         .y(y)
     );
 
-endmodule
+endmodule //tb_mysterious

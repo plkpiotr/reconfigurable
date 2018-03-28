@@ -22,5 +22,5 @@ module tb_gates # (
 		.in(inTestbench),
 		.out(outTestbench)
     );
-    
-endmodule
+
+endmodule //tb_gates

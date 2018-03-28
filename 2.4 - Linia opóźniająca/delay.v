@@ -16,7 +16,7 @@ module delay # (
 
     assign q = val;
 
-endmodule
+endmodule //delay
 
 module delay_line # (
         parameter N = 1,
@@ -45,4 +45,4 @@ module delay_line # (
 
     assign odata = tdata[DELAY];
 
-endmodule
+endmodule //delay_line

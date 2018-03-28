@@ -22,4 +22,4 @@ module tb_complex ();
     .z(out)
   );
 
-endmodule
+endmodule //tb_complex

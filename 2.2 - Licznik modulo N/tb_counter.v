@@ -35,4 +35,4 @@ module tb_counter # (
       .out(out)
     );
 
-endmodule
+endmodule //tb_counter

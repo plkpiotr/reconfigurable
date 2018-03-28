@@ -6,5 +6,5 @@ module led_button (
     );
 
     assign led = sw;
-    
-endmodule
+
+endmodule //led_button

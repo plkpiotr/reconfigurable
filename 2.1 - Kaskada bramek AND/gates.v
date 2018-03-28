@@ -17,4 +17,4 @@ module gates # (
 
     assign out = chain[LENGTH];
 
-endmodule
+endmodule //gates

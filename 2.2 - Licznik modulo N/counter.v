@@ -27,4 +27,4 @@ module counter # (
 
     assign out = val;
 
-endmodule
+endmodule //counter

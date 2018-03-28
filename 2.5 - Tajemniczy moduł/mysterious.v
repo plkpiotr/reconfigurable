@@ -7,5 +7,5 @@ module mysterious (
     );
 
     assign y = x[a];
-    
-endmodule
+
+endmodule //mysterious
