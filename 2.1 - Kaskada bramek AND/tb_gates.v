@@ -4,7 +4,7 @@ module tb_gates # (
     parameter LENGTH = 8) ();
 
     reg clock = 1'b0;
-    reg[LENGTH-1:0] inTestbench = 8'b00000000;
+    reg [LENGTH-1:0] inTestbench = 8'b00000000;
     wire outTestbench;
 
     initial begin
@@ -19,8 +19,8 @@ module tb_gates # (
     end
 
     led_button dut (
-		.in(inTestbench),
-		.out(outTestbench)
+      .in(inTestbench),
+      .out(outTestbench)
     );
 
 endmodule //tb_gates
