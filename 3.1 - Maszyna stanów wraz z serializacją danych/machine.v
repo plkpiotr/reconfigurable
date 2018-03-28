@@ -16,14 +16,14 @@ module machine (
     reg previous = 1'b0;
     reg next = 1'b0;
     reg [1:0] current = STATE0;
-    reg [2:0] index = 3'b0;
-    reg [7:0] letter = 8'b0;
+    reg [2:0] index = 3'b000;
+    reg [7:0] letter = 8'b00000000;
 
     always @ (posedge clk) begin
       if (rst) begin
         current = STATE0;
-        index = 3'b0;
-        letter = 8'b0;
+        index = 3'b000;
+        letter = 8'b000000000;
       end
       else begin
         case (current)
@@ -40,7 +40,7 @@ module machine (
           STATE2 : begin
             next = letter[index];
             index = index + 1;
-            if (index == 3'b0)
+            if (index == 3'b000)
               current = STATE3;
           end
           STATE3 : begin
@@ -53,5 +53,5 @@ module machine (
     end
 
     assign txd = next;
-    
-endmodule
+
+endmodule //machine
