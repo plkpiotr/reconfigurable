@@ -9,22 +9,22 @@ module counter # (
     input rst,
     output [WIDTH-1:0] out
 	);
-	
+
     reg [WIDTH-1:0] val = 0;
-	
-    always @(posedge clk)
-    begin
-        if(rst) 
+
+    always @(posedge clk) begin
+        if (rst)
             val <= 0;
         else
-            if(ce)
-                if(val == N-1) 
+            if (ce)
+                if(val == N-1)
                     val <= 0;
-                else 
+                else
                     val <= val + 1;
-            else 
+            else
                 val <= val;
     end
-	
+
     assign out = val;
+
 endmodule
