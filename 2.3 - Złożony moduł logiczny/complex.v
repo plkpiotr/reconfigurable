@@ -13,7 +13,7 @@ module complex (
   genvar i;
 
   generate
-    for(i=0; i<8; i=i+1) begin
+    for(i = 0; i < 8; i = i + 1) begin
 			assign levelFirst[i] = x [i] && y[i];
 			if (i % 2 == 1)
 				assign levelScond[(i-1)/2] = levelFirst[i-1] || levelFirst[i];

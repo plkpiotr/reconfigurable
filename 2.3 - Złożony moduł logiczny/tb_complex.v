@@ -13,7 +13,7 @@ module tb_complex ();
   end
 
   always @(posedge clk) begin
-    cnt <= cnt+1;
+    cnt <= cnt + 1;
   end
 
   complex dut (

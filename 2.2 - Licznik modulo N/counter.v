@@ -3,12 +3,12 @@
 module counter # (
     parameter MODULO = 4,
     parameter WIDTH = $clog2(MODULO)
-	) (
+	  ) (
     input clk,
     input ce,
     input rst,
     output [WIDTH-1:0] out
-	);
+    );
 
     reg [WIDTH-1:0] val = 0;
 

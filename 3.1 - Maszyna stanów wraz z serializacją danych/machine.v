@@ -20,5 +20,38 @@ module machine (
     reg [7:0] letter = 8'b0;
 
     always @ (posedge clk) begin
-      if (rst)
+      if (rst) begin
+        current = STATE0;
+        index = 3'b0;
+        letter = 8'b0;
+      end
+      else begin
+        case (current)
+          STATE0 : begin
+            if (send == 1 && previous == 0) begin
+              letter = data;
+              current = STATE1;
+            end
+          end
+          STATE1 : begin
+            next = 1'b1;
+            current = STATE2;
+          end
+          STATE2 : begin
+            next = letter[index];
+            index = index + 1;
+            if (index == 3'b0)
+              current = STATE3;
+          end
+          STATE3 : begin
+            next = 1'b0;
+            current = STATE0;
+          end
+        endcase
+      end
+      previous = send;
     end
+
+    assign txd = next;
+    
+endmodule
