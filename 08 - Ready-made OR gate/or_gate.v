@@ -9,4 +9,4 @@ wire [4095:0]data=4096'hf5ffe6ecf6c7fd7c7577ec5e5f46e55ef474ee66444ff77d756475fd
 
 assign o = data[4*i+2];
 
-endmodule // or_gate (LUT)
+endmodule // or_gate
