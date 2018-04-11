@@ -3,11 +3,7 @@
 ## Software stack
 
 - Vivado 2017.4
-- Atom 1.25.0
-
-## License
-
-MIT
+- Visual Studio Code 1.22.1
 
 ## Table of contents
 
@@ -44,3 +40,26 @@ MIT
 - lut.txt
 - or_gate.m
 - tb_or_gate.v
+
+### 09 - Simple arithmetic
+- simple.v
+- tb_simple.v
+- tm_simple.m
+
+### 10 - Complex arithmetic
+- arithmetic.v
+- tb_arithmetic.v
+- tm_arithmetic.m
+
+### 11 - Accumulator
+- accumulator.v
+- tb_accumulator.v
+- tm_accumulator.m
+
+## Comments
+
+The asterisk indicates that the module needs improvment or adding additional files.
+
+## License
+
+MIT
