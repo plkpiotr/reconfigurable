@@ -41,20 +41,10 @@
 - or_gate.m
 - tb_or_gate.v
 
-### 09 - Simple arithmetic
+### 09 - Simple arithmetic:
 - simple.v
 - tb_simple.v
 - tm_simple.m
-
-### 10 - Complex arithmetic
-- arithmetic.v
-- tb_arithmetic.v
-- tm_arithmetic.m
-
-### 11 - Accumulator
-- accumulator.v
-- tb_accumulator.v
-- tm_accumulator.m
 
 ## Comments
 
