@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 
 module tb_simple ();
-    wire signed [14:0] A = 15'b000101001011010;
-    wire signed [14:0] B = 15'b110011011001101;
-    wire signed [14:0] C = 15'b001001000010111;
+    wire signed [14:0] A = 15'b0000000000000001;
+    wire signed [14:0] B = 15'b0000000000000010;
+    wire signed [14:0] C = 15'b0000000000000100;
     wire signed [30:0] Y;
     
     wire ce = 1'b1;
